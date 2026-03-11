@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>訪問看護リハビリステーション ケアーズ｜川崎・鶴見</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#E8527A;
+  --pink-light:#F2789A;
+  --pink-pale:#FFF0F4;
+  --pink-bg:#FDF5F7;
+  --teal:#3AAFA9;
+  --teal-light:#5EC9C4;
+  --navy:#1A2B4A;
+  --gray-dark:#333745;
+  --gray-mid:#6B7280;
+  --gray-light:#F8F9FA;
+  --white:#FFFFFF;
+  --border:#EDE0E4;
+  --shadow-sm:0 2px 8px rgba(232,82,122,0.08);
+  --shadow-md:0 8px 32px rgba(26,43,74,0.10);
+  --shadow-lg:0 20px 60px rgba(26,43,74,0.13);
+  --radius:6px;
+  --radius-lg:12px;
+  --radius-xl:20px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--gray-dark);background:var(--white);line-height:1.75;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
+ul{list-style:none}
+.container{max-width:1160px;margin:0 auto;padding:0 40px}
+
+/* ─── HEADER ─── */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:var(--shadow-sm)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1440px;margin:0 auto;padding:0 24px;gap:16px}
+.logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--pink),var(--pink-light));border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-icon svg{color:#fff;width:19px;height:19px}
+.logo-text{display:flex;flex-direction:column;line-height:1.25;white-space:nowrap}
+.logo-text-main{font-size:11.5px;font-weight:700;color:var(--navy);letter-spacing:.01em;white-space:nowrap}
+.logo-text-sub{font-size:10px;color:var(--pink);font-weight:500;letter-spacing:.03em;white-space:nowrap}
+.header-nav{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.header-nav a{font-size:12px;font-weight:500;color:var(--gray-mid);transition:color .2s;letter-spacing:.01em;white-space:nowrap}
+.header-nav a:hover{color:var(--pink)}
+.header-cta{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.btn-tel{display:flex;align-items:center;gap:6px;background:var(--pink-pale);color:var(--pink);padding:7px 12px;border-radius:var(--radius);font-size:12px;font-weight:700;transition:all .2s;white-space:nowrap}
+.btn-tel:hover{background:var(--pink);color:#fff}
+.btn-tel svg{width:14px;height:14px}
+.btn-contact{background:var(--pink);color:#fff;padding:8px 14px;border-radius:var(--radius);font-size:12px;font-weight:700;transition:all .2s;letter-spacing:.02em;white-space:nowrap}
+.btn-contact:hover{background:var(--pink-light);transform:translateY(-1px);box-shadow:0 4px 16px rgba(232,82,122,.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gray-dark);border-radius:2px;transition:all .3s}
+
+/* ─── MOBILE NAV ─── */
+.mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:20px 24px;z-index:999;box-shadow:var(--shadow-md)}
+.mobile-nav.open{display:block}
+.mobile-nav a{display:block;padding:12px 0;font-size:15px;font-weight:500;color:var(--gray-dark);border-bottom:1px solid var(--border)}
+.mobile-nav .mobile-cta{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.mobile-nav .btn-tel,.mobile-nav .btn-contact{width:100%;justify-content:center;text-align:center;padding:14px}
+
+/* ─── HERO ─── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:70px;overflow:hidden;background:var(--white)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg-shape{position:absolute;top:-10%;right:-5%;width:60%;height:120%;background:linear-gradient(160deg,var(--pink-pale) 0%,#FFE4EC 50%,#FFF5F8 100%);clip-path:polygon(15% 0%,100% 0%,100% 100%,0% 100%);z-index:0}
+.hero-bg-dots{position:absolute;top:0;right:0;width:50%;height:100%;background-image:radial-gradient(circle,rgba(232,82,122,.12) 1.5px,transparent 1.5px);background-size:28px 28px;z-index:1;opacity:.7}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1160px;margin:0 auto;padding:80px 40px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--pink);color:#fff;padding:6px 16px;border-radius:50px;font-size:12px;font-weight:700;letter-spacing:.08em;margin-bottom:20px}
+.hero-badge svg{width:13px;height:13px}
+.hero-title{font-size:clamp(28px,3.5vw,46px);font-weight:900;line-height:1.35;color:var(--navy);letter-spacing:-.01em;margin-bottom:8px;white-space:nowrap}
+.hero-title .accent{color:var(--pink)}
+.hero-title-sub{font-size:clamp(18px,2.2vw,28px);font-weight:700;line-height:1.5;color:var(--navy);margin-bottom:24px}
+.hero-lead{font-size:15px;color:var(--gray-mid);line-height:1.85;margin-bottom:36px;max-width:480px}
+.hero-stats{display:flex;gap:32px;margin-bottom:40px}
+.stat-item{text-align:left}
+.stat-num{font-family:'Inter',sans-serif;font-size:38px;font-weight:700;color:var(--pink);line-height:1;letter-spacing:-.02em}
+.stat-num span{font-size:18px;font-weight:600}
+.stat-label{font-size:12px;color:var(--gray-mid);margin-top:4px;white-space:nowrap}
+.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--pink);color:#fff;padding:16px 32px;border-radius:var(--radius);font-size:15px;font-weight:700;transition:all .25s;letter-spacing:.03em}
+.btn-primary:hover{background:var(--pink-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,82,122,.35)}
+.btn-primary svg{width:16px;height:16px}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--pink);color:var(--pink);padding:14px 28px;border-radius:var(--radius);font-size:15px;font-weight:700;transition:all .25s}
+.btn-outline:hover{background:var(--pink);color:#fff;transform:translateY(-2px)}
+.btn-outline svg{width:16px;height:16px}
+.hero-visual{position:relative}
+.hero-img-wrap{position:relative;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+.hero-img-wrap img{width:100%;height:560px;object-fit:cover;object-position:center top}
+.hero-card-float{position:absolute;bottom:28px;left:-28px;background:#fff;border-radius:var(--radius-lg);padding:16px 20px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:14px;min-width:220px}
+.hero-card-float .icon-wrap{width:44px;height:44px;background:var(--pink-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-card-float .icon-wrap svg{width:22px;height:22px;color:var(--pink)}
+.hero-card-float .card-text strong{font-size:14px;color:var(--navy);display:block;font-weight:700}
+.hero-card-float .card-text span{font-size:12px;color:var(--gray-mid)}
+.hero-card-float2{position:absolute;top:24px;right:-24px;background:var(--pink);border-radius:var(--radius-lg);padding:14px 18px;box-shadow:var(--shadow-lg);color:#fff;text-align:center}
+.hero-card-float2 .cf2-num{font-family:'Inter';font-size:28px;font-weight:700;line-height:1}
+.hero-card-float2 .cf2-label{font-size:11px;opacity:.9;margin-top:4px}
+
+/* ─── SECTION BASE ─── */
+.section{padding:96px 0}
+.section-alt{background:var(--gray-light)}
+.section-pink{background:var(--pink-bg)}
+.section-header{text-align:center;margin-bottom:64px}
+.section-eyebrow{display:inline-flex;align-items:center;gap:6px;color:var(--pink);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.section-eyebrow::before,.section-eyebrow::after{content:'';display:block;width:24px;height:1.5px;background:var(--pink)}
+.section-title{font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--navy);line-height:1.3;letter-spacing:-.01em;margin-bottom:16px}
+.section-desc{font-size:15px;color:var(--gray-mid);max-width:560px;margin:0 auto;line-height:1.85}
+
+/* ─── WORRY (EMPATHY) ─── */
+.worry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.worry-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;transition:all .3s;position:relative;overflow:hidden}
+.worry-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink),var(--pink-light));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.worry-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.worry-card:hover::before{transform:scaleX(1)}
+.worry-icon{width:52px;height:52px;background:var(--pink-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.worry-icon svg{width:26px;height:26px;color:var(--pink)}
+.worry-card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.4}
+.worry-card p{font-size:14px;color:var(--gray-mid);line-height:1.8}
+
+/* ─── REASONS ─── */
+.reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.reason-card{background:#fff;border-radius:var(--radius-lg);padding:40px 32px;text-align:center;box-shadow:var(--shadow-sm);transition:all .3s;border:1px solid var(--border)}
+.reason-card:hover{box-shadow:var(--shadow-md);transform:translateY(-6px)}
+.reason-num{font-family:'Inter';font-size:48px;font-weight:700;color:var(--pink);opacity:.18;line-height:1;margin-bottom:4px}
+.reason-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--pink),var(--pink-light));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.reason-icon svg{width:30px;height:30px;color:#fff}
+.reason-card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.4}
+.reason-card p{font-size:14px;color:var(--gray-mid);line-height:1.85}
+
+/* ─── SERVICES ─── */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.service-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border);transition:all .3s;display:flex;flex-direction:column}
+.service-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.service-img{height:220px;overflow:hidden;position:relative}
+.service-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.service-card:hover .service-img img{transform:scale(1.04)}
+.service-tag{position:absolute;top:16px;left:16px;background:var(--pink);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:50px;letter-spacing:.05em}
+.service-body{padding:28px;flex:1;display:flex;flex-direction:column}
+.service-body h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.service-body p{font-size:14px;color:var(--gray-mid);line-height:1.85;flex:1}
+.service-footer{margin-top:20px;display:flex;align-items:center;gap:8px;color:var(--pink);font-size:13px;font-weight:600;cursor:pointer}
+.service-footer svg{width:15px;height:15px;transition:transform .2s}
+.service-card:hover .service-footer svg{transform:translateX(4px)}
+
+/* ─── PROCESS ─── */
+.process-steps{display:flex;gap:0;position:relative;overflow:hidden}
+.process-steps::before{content:'';position:absolute;top:44px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--pink) 0%,var(--teal) 100%);z-index:0}
+.process-step{flex:1;text-align:center;position:relative;z-index:1;padding:0 12px}
+.step-circle{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--pink-light));display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 20px rgba(232,82,122,.3);color:#fff}
+.step-circle .step-num{font-family:'Inter';font-size:12px;font-weight:700;opacity:.85;line-height:1}
+.step-circle svg{width:26px;height:26px;margin-top:2px}
+.process-step h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4}
+.process-step p{font-size:12px;color:var(--gray-mid);line-height:1.7}
+
+/* ─── STAFF ─── */
+.staff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.staff-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border);transition:all .3s;text-align:center}
+.staff-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.staff-img{height:200px;overflow:hidden}
+.staff-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .4s}
+.staff-card:hover .staff-img img{transform:scale(1.06)}
+.staff-body{padding:20px 16px}
+.staff-role{font-size:11px;font-weight:700;color:var(--pink);letter-spacing:.08em;margin-bottom:4px}
+.staff-name{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.staff-qual{font-size:12px;color:var(--gray-mid);margin-bottom:12px;line-height:1.5}
+.staff-msg{font-size:12px;color:var(--gray-mid);line-height:1.7;text-align:left;background:var(--pink-pale);border-radius:var(--radius);padding:12px}
+
+/* ─── INSURANCE / FAQ ─── */
+.ins-faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ins-box h3,.faq-box h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--pink)}
+.ins-item{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border)}
+.ins-item:last-child{border-bottom:none}
+.ins-dot{width:8px;height:8px;background:var(--pink);border-radius:50%;margin-top:8px;flex-shrink:0}
+.ins-item-body strong{font-size:14px;color:var(--navy);font-weight:600;display:block;margin-bottom:3px}
+.ins-item-body p{font-size:13px;color:var(--gray-mid);line-height:1.7}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:12px;overflow:hidden}
+.faq-q{display:flex;align-items:center;gap:12px;padding:18px 20px;cursor:pointer;font-size:14px;font-weight:600;color:var(--navy);background:#fff;transition:background .2s}
+.faq-q:hover{background:var(--pink-pale)}
+.faq-q-badge{background:var(--pink);color:#fff;font-size:12px;font-weight:700;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.faq-q .faq-arrow{margin-left:auto;color:var(--pink);transition:transform .3s}
+.faq-q .faq-arrow svg{width:16px;height:16px}
+.faq-a{display:none;padding:0 20px 18px 56px;font-size:13px;color:var(--gray-mid);line-height:1.8;background:#fff}
+.faq-item.open .faq-q{background:var(--pink-pale)}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+
+/* ─── CTA BANNER ─── */
+.cta-banner{background:linear-gradient(135deg,var(--pink) 0%,#C94070 100%);position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:180%;background:rgba(255,255,255,.06);border-radius:50%;pointer-events:none}
+.cta-banner::after{content:'';position:absolute;bottom:-30%;left:-5%;width:40%;height:140%;background:rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+.cta-inner{position:relative;z-index:1;text-align:center;padding:80px 40px}
+.cta-inner h2{font-size:clamp(20px,3vw,34px);font-weight:900;color:#fff;margin-bottom:12px;line-height:1.35}
+.cta-inner p{font-size:15px;color:rgba(255,255,255,.88);margin-bottom:40px;line-height:1.8}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--pink);padding:16px 32px;border-radius:var(--radius);font-size:15px;font-weight:700;transition:all .25s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.btn-white svg{width:16px;height:16px}
+.btn-white-outline{display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(255,255,255,.7);color:#fff;padding:14px 28px;border-radius:var(--radius);font-size:15px;font-weight:700;transition:all .25s}
+.btn-white-outline:hover{background:rgba(255,255,255,.15);border-color:#fff;transform:translateY(-2px)}
+.btn-white-outline svg{width:16px;height:16px}
+
+/* ─── COMPANY ─── */
+.company-table{width:100%;border-collapse:collapse}
+.company-table tr{border-bottom:1px solid var(--border)}
+.company-table th{width:160px;padding:16px 20px;font-size:14px;font-weight:600;color:var(--gray-mid);text-align:left;vertical-align:top;background:var(--gray-light)}
+.company-table td{padding:16px 20px;font-size:14px;color:var(--gray-dark);line-height:1.7}
+
+/* ─── CONTACT ─── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-info h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:20px}
+.contact-tel-big{font-family:'Inter';font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--pink);display:flex;align-items:center;gap:10px;margin-bottom:8px;line-height:1}
+.contact-tel-big svg{width:36px;height:36px}
+.contact-hours{font-size:13px;color:var(--gray-mid);margin-bottom:24px}
+.contact-alt{display:flex;flex-direction:column;gap:12px}
+.contact-alt-btn{display:flex;align-items:center;gap:12px;padding:16px 20px;border-radius:var(--radius);font-size:14px;font-weight:600;transition:all .2s;cursor:pointer;border:2px solid var(--border)}
+.contact-alt-btn.line{border-color:#06C755;color:#06C755}
+.contact-alt-btn.line:hover{background:#06C755;color:#fff}
+.contact-alt-btn svg{width:20px;height:20px}
+.contact-form{background:#fff;border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-md);border:1px solid var(--border)}
+.contact-form h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:24px}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--gray-dark);margin-bottom:7px}
+.form-label .req{color:var(--pink);margin-left:4px;font-size:11px}
+.form-input,.form-select,.form-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:14px;font-family:'Noto Sans JP',sans-serif;color:var(--gray-dark);background:#fff;outline:none;transition:border-color .2s}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--pink)}
+.form-textarea{resize:vertical;min-height:110px;line-height:1.7}
+.form-submit{width:100%;background:var(--pink);color:#fff;border:none;padding:16px;border-radius:var(--radius);font-size:15px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:.03em}
+.form-submit:hover{background:var(--pink-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,82,122,.3)}
+.form-submit svg{width:16px;height:16px}
+
+/* ─── FOOTER ─── */
+.site-footer{background:var(--navy);color:rgba(255,255,255,.8)}
+.footer-top{padding:64px 0 48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-logo-text .logo-text-main{color:#fff;font-size:14px}
+.footer-logo-text .logo-text-sub{color:var(--pink-light)}
+.footer-about{font-size:13px;line-height:1.85;margin-top:16px;opacity:.75}
+.footer-col h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:.05em}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{font-size:13px;opacity:.7;transition:opacity .2s}
+.footer-col ul li a:hover{opacity:1}
+.footer-bottom{padding:20px 0;text-align:center;font-size:12px;opacity:.5}
+
+/* ─── FLOATING TEL ─── */
+.float-tel{display:none;position:fixed;bottom:20px;left:0;right:0;z-index:900;padding:0 16px;justify-content:center;gap:10px}
+.float-tel a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px;border-radius:var(--radius);font-size:14px;font-weight:700;max-width:200px}
+.float-tel .f-tel{background:var(--pink);color:#fff}
+.float-tel .f-contact{background:var(--navy);color:#fff}
+.float-tel svg{width:18px;height:18px}
+
+/* ─── ANIMATIONS ─── */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.fade-up-d1{transition-delay:.1s}
+.fade-up-d2{transition-delay:.2s}
+.fade-up-d3{transition-delay:.3s}
+.fade-up-d4{transition-delay:.4s}
+.fade-up-d5{transition-delay:.5s}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .staff-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-title{white-space:normal}
+}
+@media(max-width:768px){
+  .container{padding:0 20px}
+  .header-inner{padding:0 20px}
+  .header-nav,.header-cta .btn-tel,.header-cta .btn-contact{display:none}
+  .hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:40px;padding:60px 20px}
+  .hero-bg-shape{width:100%;clip-path:none;top:auto;bottom:0;height:50%;opacity:.5}
+  .hero-title{font-size:clamp(24px,6vw,32px);white-space:normal}
+  .hero-stats{gap:20px;flex-wrap:wrap}
+  .hero-card-float{display:none}
+  .hero-card-float2{display:none}
+  .hero-img-wrap img{height:320px}
+  .section{padding:64px 0}
+  .section-header{margin-bottom:40px}
+  .worry-grid{grid-template-columns:1fr}
+  .reasons-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .process-steps{flex-direction:column;gap:24px}
+  .process-steps::before{display:none}
+  .process-step{display:flex;gap:20px;align-items:flex-start;text-align:left}
+  .step-circle{width:64px;height:64px;flex-shrink:0}
+  .step-circle svg{width:22px;height:22px}
+  .staff-grid{grid-template-columns:repeat(2,1fr)}
+  .ins-faq-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .company-table th{width:100px;font-size:13px}
+  .company-table td{font-size:13px}
+  .float-tel{display:flex}
+  body{padding-bottom:80px}
+  .cta-inner{padding:60px 20px}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .btn-primary,.btn-outline{width:100%;justify-content:center}
+}
+@media(max-width:480px){
+  .staff-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{gap:16px}
+  .stat-num{font-size:30px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon"><i data-lucide="heart-pulse"></i></div>
+      <div class="logo-text">
+        <span class="logo-text-main">訪問看護リハビリステーション ケアーズ</span>
+        <span class="logo-text-sub">川崎・鶴見エリア対応</span>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="#about">私たちについて</a>
+      <a href="#services">サービス</a>
+      <a href="#process">ご利用の流れ</a>
+      <a href="#staff">スタッフ</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:0456427603" class="btn-tel"><i data-lucide="phone"></i>045-642-7603</a>
+      <a href="#contact" class="btn-contact">無料相談はこちら</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#about">私たちについて</a>
+  <a href="#services">サービス内容</a>
+  <a href="#process">ご利用の流れ</a>
+  <a href="#staff">スタッフ紹介</a>
+  <a href="#faq">よくある質問</a>
+  <a href="#contact">お問い合わせ</a>
+  <div class="mobile-cta">
+    <a href="tel:0456427603" class="btn-tel"><i data-lucide="phone"></i>045-642-7603（通話無料）</a>
+    <a href="#contact" class="btn-contact">メールでお問い合わせ</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="hero-bg-shape"></div>
+    <div class="hero-bg-dots"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge fade-up"><i data-lucide="map-pin"></i>川崎・鶴見エリア全域対応</div>
+      <h1 class="hero-title fade-up fade-up-d1"><span class="accent">住み慣れた</span>ご自宅で</h1>
+      <p class="hero-title-sub fade-up fade-up-d2">安心の看護とリハビリを<br>お届けします</p>
+      <p class="hero-lead fade-up fade-up-d3">退院後の不安、慢性疾患のケア、リハビリの継続——。<br>専門スタッフがご自宅に伺い、あなたらしい生活を支えます。精神科訪問看護・終末期ケアにも対応。</p>
+      <div class="hero-stats fade-up fade-up-d3">
+        <div class="stat-item">
+          <div class="stat-num">200<span>名超</span></div>
+          <div class="stat-label">登録利用者数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24<span>時間</span></div>
+          <div class="stat-label">緊急対応体制</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10<span>年超</span></div>
+          <div class="stat-label">地域での実績</div>
+        </div>
+      </div>
+      <div class="hero-actions fade-up fade-up-d4">
+        <a href="#contact" class="btn-primary"><i data-lucide="message-circle"></i>無料相談・見学を申し込む</a>
+        <a href="#services" class="btn-outline"><i data-lucide="list"></i>サービス内容を見る</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-up fade-up-d2">
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80" alt="訪問看護スタッフと利用者様">
+      </div>
+      <div class="hero-card-float">
+        <div class="icon-wrap"><i data-lucide="shield-check"></i></div>
+        <div class="card-text">
+          <strong>保険適用でご利用可能</strong>
+          <span>介護保険・医療保険に対応</span>
+        </div>
+      </div>
+      <div class="hero-card-float2">
+        <div class="cf2-num">365<span style="font-size:14px">日</span></div>
+        <div class="cf2-label">年中無休で対応</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORRY (EMPATHY) -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">お悩みはありませんか</div>
+      <h2 class="section-title fade-up">こんなお悩みをお持ちの方へ</h2>
+      <p class="section-desc fade-up fade-up-d1">退院後の生活や在宅療養に関するお悩みは、ぜひ私たちにご相談ください。一人ひとりに寄り添った支援をご提供します。</p>
+    </div>
+    <div class="worry-grid">
+      <div class="worry-card fade-up">
+        <div class="worry-icon"><i data-lucide="home"></i></div>
+        <h3>退院後の生活が不安です</h3>
+        <p>病院から自宅に戻っても、医療的なケアが必要な場合、専門スタッフが定期的に訪問し、安心して生活できる環境を整えます。</p>
+      </div>
+      <div class="worry-card fade-up fade-up-d1">
+        <div class="worry-icon"><i data-lucide="activity"></i></div>
+        <h3>リハビリを続けたいが通院が難しい</h3>
+        <p>理学療法士・作業療法士が直接ご自宅へ。通院の負担なく、生活環境に合わせた質の高いリハビリテーションを継続できます。</p>
+      </div>
+      <div class="worry-card fade-up fade-up-d2">
+        <div class="worry-icon"><i data-lucide="brain"></i></div>
+        <h3>精神的なケアも必要と感じている</h3>
+        <p>精神科訪問看護にも対応。メンタルヘルスに関するケアもご自宅で受けることができ、日常生活の安定をサポートします。</p>
+      </div>
+      <div class="worry-card fade-up fade-up-d1">
+        <div class="worry-icon"><i data-lucide="moon"></i></div>
+        <h3>夜間・緊急時の対応が心配</h3>
+        <p>24時間365日の緊急対応体制を整備。夜間や休日でも迅速に対応し、ご本人とご家族が安心できる体制を構築しています。</p>
+      </div>
+      <div class="worry-card fade-up fade-up-d2">
+        <div class="worry-icon"><i data-lucide="heart"></i></div>
+        <h3>終末期を住み慣れた家で過ごしたい</h3>
+        <p>ターミナルケアの経験豊富なスタッフが在籍。最期まで自宅での生活を希望される方と、そのご家族を全力でサポートします。</p>
+      </div>
+      <div class="worry-card fade-up fade-up-d3">
+        <div class="worry-icon"><i data-lucide="users"></i></div>
+        <h3>ケアマネジャーとして連携先を探している</h3>
+        <p>居宅介護支援事業所のケアマネジャー様との連携を積極的に行っています。迅速な情報共有と柔軟な対応が強みです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="section" id="reasons">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">選ばれる理由</div>
+      <h2 class="section-title fade-up">ケアーズが選ばれる3つの理由</h2>
+      <p class="section-desc fade-up fade-up-d1">地域の皆様に信頼していただける訪問看護・リハビリステーションとして、他にはない強みをご提供します。</p>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card fade-up">
+        <div class="reason-num">01</div>
+        <div class="reason-icon"><i data-lucide="dumbbell"></i></div>
+        <h3>リハビリに特化した<br>専門スタッフ常駐</h3>
+        <p>理学療法士・作業療法士・言語聴覚士が常駐し、病院水準のリハビリをご自宅でご提供。機能回復から日常動作の向上まで、専門的な視点でサポートします。</p>
+      </div>
+      <div class="reason-card fade-up fade-up-d1">
+        <div class="reason-num">02</div>
+        <div class="reason-icon"><i data-lucide="zap"></i></div>
+        <h3>24時間・迅速な<br>緊急対応体制</h3>
+        <p>夜間・休日を問わず24時間対応。「何かあったらすぐ連絡できる」安心感がご利用者様とご家族の不安を解消します。365日体制で地域を守ります。</p>
+      </div>
+      <div class="reason-card fade-up fade-up-d2">
+        <div class="reason-num">03</div>
+        <div class="reason-icon"><i data-lucide="award"></i></div>
+        <h3>精神科・終末期ケアにも<br>対応できる豊富な実績</h3>
+        <p>精神科訪問看護や終末期ケア(ターミナルケア)など、対応が難しいとされる分野でも専門チームが豊富な経験でサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-pink" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">サービス内容</div>
+      <h2 class="section-title fade-up">提供するサービス</h2>
+      <p class="section-desc fade-up fade-up-d1">ご自宅での療養生活を包括的にサポートする、幅広いサービスをご用意しています。</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80" alt="看護ケア">
+          <span class="service-tag">看護ケア</span>
+        </div>
+        <div class="service-body">
+          <h3>訪問看護・医療処置</h3>
+          <p>バイタルサインの測定や服薬管理から、点滴・褥瘡処置・カテーテル管理などの医療的ケアまで、看護師が丁寧に対応します。主治医との連携のもと、安全な在宅療養を支援します。</p>
+          <div class="service-footer">詳細を見る <i data-lucide="arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="service-card fade-up fade-up-d1">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="リハビリテーション">
+          <span class="service-tag">リハビリ</span>
+        </div>
+        <div class="service-body">
+          <h3>訪問リハビリテーション</h3>
+          <p>理学療法士・作業療法士が自宅環境に合わせた個別リハビリプランを立案。歩行訓練・筋力強化・日常生活動作の向上・福祉用具の適切な活用など、生活の質の改善を目指します。</p>
+          <div class="service-footer">詳細を見る <i data-lucide="arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80" alt="精神科訪問看護">
+          <span class="service-tag">精神科対応</span>
+        </div>
+        <div class="service-body">
+          <h3>精神科訪問看護</h3>
+          <p>精神疾患をお持ちの方の服薬管理・生活リズムの安定・家族への対応相談など、精神科専門の看護師が継続的にサポート。地域での自立した生活を一緒に考えます。</p>
+          <div class="service-footer">詳細を見る <i data-lucide="arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="service-card fade-up fade-up-d1">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1631217873436-c82c26e2b42e?w=600&q=80" alt="ターミナルケア">
+          <span class="service-tag">終末期ケア</span>
+        </div>
+        <div class="service-body">
+          <h3>ターミナルケア（終末期ケア）</h3>
+          <p>「自宅で最期を迎えたい」というご本人・ご家族の意思を尊重した終末期ケアを提供。医師・介護チームと連携し、苦痛の緩和と穏やかな時間のサポートを行います。</p>
+          <div class="service-footer">詳細を見る <i data-lucide="arrow-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">ご利用の流れ</div>
+      <h2 class="section-title fade-up">お問い合わせから訪問開始まで</h2>
+      <p class="section-desc fade-up fade-up-d1">初めての方でも安心してご利用いただけるよう、わかりやすいステップでご説明します。</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-circle"><span class="step-num">STEP 1</span><i data-lucide="phone-call"></i></div>
+        <h4>お電話・メールで<br>ご連絡</h4>
+        <p>まずはお気軽にご連絡ください。状況や不安なことを何でもお話しください。</p>
+      </div>
+      <div class="process-step fade-up fade-up-d1">
+        <div class="step-circle"><span class="step-num">STEP 2</span><i data-lucide="clipboard-list"></i></div>
+        <h4>無料相談・<br>ニーズの確認</h4>
+        <p>担当スタッフがご状況を詳しく伺い、必要なサービスをご提案します。</p>
+      </div>
+      <div class="process-step fade-up fade-up-d2">
+        <div class="step-circle"><span class="step-num">STEP 3</span><i data-lucide="file-text"></i></div>
+        <h4>主治医・ケアマネ<br>との連携・手続き</h4>
+        <p>訪問看護指示書の取得など、必要な手続きをサポートします。</p>
+      </div>
+      <div class="process-step fade-up fade-up-d3">
+        <div class="step-circle"><span class="step-num">STEP 4</span><i data-lucide="user-check"></i></div>
+        <h4>担当スタッフの<br>決定・ご挨拶</h4>
+        <p>担当看護師・療法士が事前にご挨拶にお伺いし、信頼関係を築きます。</p>
+      </div>
+      <div class="process-step fade-up fade-up-d4">
+        <div class="step-circle"><span class="step-num">STEP 5</span><i data-lucide="home"></i></div>
+        <h4>訪問看護・<br>リハビリ開始</h4>
+        <p>ご自宅での訪問がスタート。状況に応じて柔軟にプランを調整します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF -->
+<section class="section section-alt" id="staff">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">スタッフ紹介</div>
+      <h2 class="section-title fade-up">あなたを支える専門家たち</h2>
+      <p class="section-desc fade-up fade-up-d1">経験豊富な看護師・理学療法士・作業療法士が、チームとなってあなたの生活を支えます。</p>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card fade-up">
+        <div class="staff-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="管理者 田中看護師"></div>
+        <div class="staff-body">
+          <div class="staff-role">管理者・看護師長</div>
+          <div class="staff-name">田中 恵子</div>
+          <div class="staff-qual">看護師 / 訪問看護歴15年</div>
+          <div class="staff-msg">「ご自宅での生活を最大限に支援することが私の使命です。何でも気軽にご相談ください。」</div>
+        </div>
+      </div>
+      <div class="staff-card fade-up fade-up-d1">
+        <div class="staff-img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="理学療法士 山本"></div>
+        <div class="staff-body">
+          <div class="staff-role">理学療法士</div>
+          <div class="staff-name">山本 健太</div>
+          <div class="staff-qual">理学療法士 / 整形・脳血管リハビリ専門</div>
+          <div class="staff-msg">「歩けるようになりたい、という思いを諦めないでください。一緒に目標を達成しましょう。」</div>
+        </div>
+      </div>
+      <div class="staff-card fade-up fade-up-d2">
+        <div class="staff-img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="作業療法士 佐藤"></div>
+        <div class="staff-body">
+          <div class="staff-role">作業療法士</div>
+          <div class="staff-name">佐藤 美咲</div>
+          <div class="staff-qual">作業療法士 / 生活動作・認知症ケア</div>
+          <div class="staff-msg">「料理や入浴など、日常の「したいこと」ができる喜びを一緒に取り戻しましょう。」</div>
+        </div>
+      </div>
+      <div class="staff-card fade-up fade-up-d3">
+        <div class="staff-img"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80" alt="看護師 鈴木"></div>
+        <div class="staff-body">
+          <div class="staff-role">精神科専門看護師</div>
+          <div class="staff-name">鈴木 涼子</div>
+          <div class="staff-qual">看護師 / 精神科訪問看護認定</div>
+          <div class="staff-msg">「心の状態も体と同じように大切です。ゆっくりとあなたのペースで、一緒に歩んでいきます。」</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE & FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">料金・よくある質問</div>
+      <h2 class="section-title fade-up">保険適用とよくあるご質問</h2>
+    </div>
+    <div class="ins-faq-grid">
+      <div class="ins-box fade-up">
+        <h3>保険適用について</h3>
+        <div class="ins-item">
+          <div class="ins-dot"></div>
+          <div class="ins-item-body">
+            <strong>医療保険（訪問看護）</strong>
+            <p>医師の訪問看護指示書があれば医療保険でご利用可能。特定疾病・精神科疾患・末期がんなど対象が広く、自己負担は1〜3割です。</p>
+          </div>
+        </div>
+        <div class="ins-item">
+          <div class="ins-dot"></div>
+          <div class="ins-item-body">
+            <strong>介護保険（訪問看護・リハビリ）</strong>
+            <p>要介護認定を受けている方が対象。ケアプランに基づいてご利用いただき、自己負担は原則1割（収入により2〜3割）です。</p>
+          </div>
+        </div>
+        <div class="ins-item">
+          <div class="ins-dot"></div>
+          <div class="ins-item-body">
+            <strong>自費サービス</strong>
+            <p>保険適用外のサービスも対応。詳しい料金については、お気軽にお問い合わせください。</p>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:20px;background:var(--pink-pale);border-radius:var(--radius-lg);border-left:4px solid var(--pink)">
+          <p style="font-size:13px;color:var(--gray-dark);line-height:1.8">保険適用の詳細はご状況により異なります。まずはお気軽にご相談ください。スタッフが丁寧にご説明いたします。</p>
+        </div>
+      </div>
+      <div class="faq-box fade-up fade-up-d1">
+        <h3>よくあるご質問</h3>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-badge">Q</span>初めて利用する場合、何をすればいいですか？<span class="faq-arrow"><i data-lucide="chevron-down"></i></span></div>
+          <div class="faq-a">まずはお電話またはメールにてご連絡ください。現在の状況をお聞きし、必要な手続きをわかりやすくご案内します。ケアマネジャーがいない方でも、一緒にご支援できる体制があります。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-badge">Q</span>訪問エリアはどこまで対応していますか？<span class="faq-arrow"><i data-lucide="chevron-down"></i></span></div>
+          <div class="faq-a">川崎市（川崎区・幸区・中原区・宮前区ほか）と横浜市鶴見区を中心に対応しています。エリア外の方もまずはご相談ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-badge">Q</span>毎回同じスタッフが来てもらえますか？<span class="faq-arrow"><i data-lucide="chevron-down"></i></span></div>
+          <div class="faq-a">担当制を採用しており、なるべく同じスタッフが伺えるよう調整しています。顔なじみのスタッフが継続してケアすることで、細かな変化にも気づけます。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-badge">Q</span>見学・説明会はできますか？<span class="faq-arrow"><i data-lucide="chevron-down"></i></span></div>
+          <div class="faq-a">随時開催しています。服装・履歴書等は不要で、ご家族の方のみでもご参加いただけます。「まず話だけ聞いてみたい」という方も大歓迎です。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-badge">Q</span>ターミナルケア（終末期ケア）は対応できますか？<span class="faq-arrow"><i data-lucide="chevron-down"></i></span></div>
+          <div class="faq-a">はい、対応しております。在宅での看取りを希望される方に向けた専門チームが、ご本人とご家族を包括的にサポートします。医師・薬剤師との連携体制も整っています。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <h2 class="fade-up">「話だけでも聞いてみたい」<br>そんな方も、ぜひお気軽にどうぞ</h2>
+    <p class="fade-up fade-up-d1">見学・説明会は随時開催中。服装自由・履歴書不要・ご家族のみの参加もOKです。<br>まずは一歩、お問い合わせください。</p>
+    <div class="cta-actions fade-up fade-up-d2">
+      <a href="tel:0456427603" class="btn-white"><i data-lucide="phone"></i>045-642-7603</a>
+      <a href="#contact" class="btn-white-outline"><i data-lucide="mail"></i>メールで相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section class="section section-alt" id="company">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">事業所情報</div>
+      <h2 class="section-title fade-up">会社・事業所概要</h2>
+    </div>
+    <div class="fade-up" style="background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border)">
+      <table class="company-table">
+        <tr><th>事業所名</th><td>訪問看護リハビリステーション ケアーズ川崎・鶴見</td></tr>
+        <tr><th>所在地</th><td>〒230-0025　神奈川県横浜市鶴見区市場大和町5-3　ラ・グルーラ101</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0456427603" style="color:var(--pink);font-weight:600">045-642-7603</a></td></tr>
+        <tr><th>営業時間</th><td>月〜土 8:00〜18:00（日・祝休み）／緊急時は24時間365日対応</td></tr>
+        <tr><th>最寄り駅</th><td>京急本線 鶴見市場駅 徒歩2分</td></tr>
+        <tr><th>対応エリア</th><td>横浜市鶴見区、川崎市川崎区、川崎市幸区、川崎市中原区　ほか周辺エリア</td></tr>
+        <tr><th>対応保険</th><td>介護保険 / 医療保険（健康保険）/ 自費サービス</td></tr>
+        <tr><th>設立</th><td>2013年5月</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">お問い合わせ</div>
+      <h2 class="section-title fade-up">まずはご相談ください</h2>
+      <p class="section-desc fade-up fade-up-d1">お電話・メールフォーム・LINEにてお気軽にご連絡ください。</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <h3>お電話でのお問い合わせ</h3>
+        <div class="contact-tel-big"><i data-lucide="phone"></i>045-642-7603</div>
+        <div class="contact-hours">受付時間：月〜土 8:00〜18:00（日・祝休み）<br>※緊急時は24時間対応</div>
+        <div class="contact-alt">
+          <div class="contact-alt-btn line">
+            <i data-lucide="message-circle"></i>
+            <span>LINEで相談する（準備中）</span>
+          </div>
+        </div>
+        <div style="margin-top:32px;padding:24px;background:var(--pink-pale);border-radius:var(--radius-lg)">
+          <p style="font-size:14px;color:var(--gray-dark);font-weight:600;margin-bottom:8px">見学・説明会 随時開催中</p>
+          <p style="font-size:13px;color:var(--gray-mid);line-height:1.8">服装自由・履歴書不要・お子様連れOK。「話だけ聞いてみたい」という方も大歓迎です。お気軽にどうぞ。</p>
+        </div>
+      </div>
+      <div class="contact-form fade-up fade-up-d1">
+        <h3>メールフォーム</h3>
+        <div class="form-group">
+          <label class="form-label">お名前<span class="req">必須</span></label>
+          <input type="text" class="form-input" placeholder="例：田中 太郎">
+        </div>
+        <div class="form-group">
+          <label class="form-label">電話番号<span class="req">必須</span></label>
+          <input type="tel" class="form-input" placeholder="例：045-XXX-XXXX">
+        </div>
+        <div class="form-group">
+          <label class="form-label">メールアドレス</label>
+          <input type="email" class="form-input" placeholder="例：example@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">お問い合わせ種別<span class="req">必須</span></label>
+          <select class="form-select">
+            <option value="">選択してください</option>
+            <option>訪問看護について</option>
+            <option>リハビリについて</option>
+            <option>精神科訪問看護について</option>
+            <option>ターミナルケアについて</option>
+            <option>ケアマネジャーとしての連携について</option>
+            <option>見学・説明会について</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ご相談内容・ご要望</label>
+          <textarea class="form-textarea" placeholder="ご状況やご不安なことなど、なんでもお書きください"></textarea>
+        </div>
+        <button type="button" class="form-submit"><i data-lucide="send"></i>送信する</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo footer-logo-text">
+            <div class="logo-icon"><i data-lucide="heart-pulse"></i></div>
+            <div class="logo-text">
+              <span class="logo-text-main">訪問看護リハビリステーション ケアーズ</span>
+              <span class="logo-text-sub">川崎・鶴見</span>
+            </div>
+          </div>
+          <p class="footer-about">2013年開設。川崎・鶴見エリアを中心に、在宅療養が必要な方とそのご家族の生活を支え続けています。感謝・敬意・チームワークを大切に、地域医療に貢献します。</p>
+        </div>
+        <div class="footer-col">
+          <h4>サービス</h4>
+          <ul>
+            <li><a href="#services">訪問看護・医療処置</a></li>
+            <li><a href="#services">訪問リハビリテーション</a></li>
+            <li><a href="#services">精神科訪問看護</a></li>
+            <li><a href="#services">ターミナルケア</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>情報</h4>
+          <ul>
+            <li><a href="#about">ご利用案内</a></li>
+            <li><a href="#process">ご利用の流れ</a></li>
+            <li><a href="#staff">スタッフ紹介</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>お問い合わせ</h4>
+          <ul>
+            <li><a href="tel:0456427603">045-642-7603</a></li>
+            <li><a href="#contact">メールフォーム</a></li>
+            <li><a href="#company">アクセス</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>Copyright &copy; 2024 訪問看護リハビリステーション ケアーズ川崎・鶴見 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING TEL (mobile) -->
+<div class="float-tel">
+  <a href="tel:0456427603" class="f-tel"><i data-lucide="phone"></i>電話する</a>
+  <a href="#contact" class="f-contact"><i data-lucide="mail"></i>相談する</a>
+</div>
+
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+// Header scroll shadow
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('open');
+});
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => mobileNav.classList.remove('open'));
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Intersection Observer for fade-up animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Smooth close mobile nav on outside click
+document.addEventListener('click', (e) => {
+  if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
+    mobileNav.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
